@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-angular';
+  constructor(){
+//    setInterval(() =>
+//    this.isAngularCool = !this.isAngularCool,
+//    2000)
+  }
+
+  isAngularCool =false;
+  myFeelingAboutAngular = 'Great!';
+
+  toggle(){
+    this.isAngularCool=!this.isAngularCool;
+  }
+
 }

@@ -1,0 +1,39 @@
+<h2>Todo Api</h2>
+
+<h3>People</h3>
+
+<button (click)="getPeople()">Show</button>
+
+<ul *ngIf="people">
+  <li *ngFor="let p of people">{{ p.name }}</li>
+</ul>
+
+<h3>ToDo-List</h3>
+
+<button (click)="getTodo()">Show</button>
+<input type="checkbox" [(ngModel)]="cbundone" (click)="getTodo()" /><span>
+  only Undone
+</span>
+
+<select [(ngModel)]="filterPerson" (change)="getTodo()">
+  <option>None</option>
+  <option *ngFor="let option of people">
+    {{ option.name }}
+  </option>
+</select>
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>DESC</td>
+    <td>Assigned to</td>
+    <td>Done</td>
+  </tr>
+
+  <tr *ngFor="let todo of filtertTodos">
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.description }}</td>
+    <td>{{ todo.assignedTo }}</td>
+    <td>{{ todo.done }}</td>
+  </tr>
+</table>

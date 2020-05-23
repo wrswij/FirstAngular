@@ -1,0 +1,8 @@
+<ol>
+  <li *ngFor="let item of todoItems; index as i">
+    {{item}}<button (click)="removeItem(i)">X</button>
+  </li>
+</ol>
+
+<input [(ngModel)]="newItem"/>
+<button (click)="addNewItem(newItem)">Add</button>

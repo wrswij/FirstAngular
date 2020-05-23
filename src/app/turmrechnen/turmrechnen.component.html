@@ -1,0 +1,28 @@
+<h1>Turmrechnen</h1>
+
+<span>SV: {{ SV }} - Height: {{ Height }}</span>
+
+<table>
+  <tr>
+    <td>Start Value:</td>
+    <input [(ngModel)]="SV" />
+  </tr>
+  <tr>
+    <td>Height:</td>
+    <input [(ngModel)]="Height" />
+    <span [hidden]="Height >= 2">Höhe größter als >=2</span>
+  </tr>
+  <td></td>
+  <td>
+    <button (click)="calculate()">Calculate</button>
+  </td>
+</table>
+<table>
+  <tr *ngFor="let item of NumberList">
+    <td>{{ item.value1 }}</td>
+    <td>{{ item.operator }}</td>
+    <td>{{ item.value2 }}</td>
+    <td>=</td>
+    <td>{{ item.result }}</td>
+  </tr>
+</table>
